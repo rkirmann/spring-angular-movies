@@ -11,18 +11,26 @@
 mvn clean package
 
 # change directory to the repo's backend build folder
-cd movies-project/server/target
+cd server/target
 
 # start the app
 # both backend and frontend are packaged into a single jar
 java -jar favorite-movies-0.0.1.jar
-
-# open frontend from browser
-http://localhost:8080
 ```
-To clear database, simply delete the spring-boot-h2-db.mv.db file in target dir
+### open frontend from browser
+http://localhost:8080
+
+### Database
+This project is using H2 database from a file in server/target
+
+To clear database, simply delete the spring-boot-h2-db.mv.db file
 and restart the app
 
+To access database:
+* http://localhost:8080/h2
+* JDBC URL: jdbc:h2:file:./spring-boot-h2-db
+* Leave the rest as-is and connect
+
 ## License
- [MIT](/LICENSE)
+[MIT](/LICENSE)
 
