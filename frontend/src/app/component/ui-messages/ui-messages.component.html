@@ -1,0 +1,8 @@
+<div class="mt-2">
+  <div *ngFor="let message of messages" class="alert" [ngClass]="message.type" role="alert" [innerHTML]="message.text">
+    <button type="button" class="close"(click)="removeMessage(message)">&times;</button>
+  </div>
+</div>
+
+<!-- DEBUG -->
+<!-- <pre class="debug-panel">messages: {{ messages | json }}</pre> -->
