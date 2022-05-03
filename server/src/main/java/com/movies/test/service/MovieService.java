@@ -17,9 +17,12 @@ import java.util.Optional;
 
 @Service
 public class MovieService {
+
     private static final Logger logger = LoggerFactory.getLogger(MovieService.class.getName());
+
     @Value("${omdb.api}")
     private String api;
+
     @Autowired
     private MovieRepository movieRepository;
 
@@ -30,11 +33,6 @@ public class MovieService {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
-//    @Autowired
-//    public MovieService(MovieRepository movieRepository) {
-//        this.movieRepository = movieRepository;
-//    }
 
     public List<Movie> list() {
         return movieRepository.findAll();
@@ -57,7 +55,5 @@ public class MovieService {
         searchDto.setPage(page);
         return searchDto;
     }
-
-
 
 }
